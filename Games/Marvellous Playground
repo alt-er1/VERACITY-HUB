@@ -1,0 +1,393 @@
+if not syn then
+    plr:Kick('Sorry! Synapse X is required to run this script. Buy Synapse here: https://x.synapse.to')
+end
+
+local OrionLib = loadstring(game:HttpGet(('https://gist.githubusercontent.com/alt-er1/048a3633cc4752e578fe8386a554e087/raw/a2ebc46e4912c6eaf1f0d06d0f45cf7db477f025/DevInc.lua')))()
+local Window = OrionLib:MakeWindow({Name = "VERACITY", HidePremium = false,IntroText = "Conformity to facts; accuracy.",IntroEnabled = true, SaveConfig = true, ConfigFolder = "VERACITYMARVEL"})
+
+-- tabs
+
+local chars = Window:MakeTab({
+    Name = "Characters",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Toggles = Window:MakeTab({
+    Name = "Toggles",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Visuals = Window:MakeTab({
+    Name = "Visuals",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Credits = Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--Gloabls and important locals
+
+_G.ReverseFlashGodMode = false
+
+local ThanosSkin = "Skin1"
+local WandaSkin = "Skin1"
+local SpeedSkin = 1
+local ChadSkin = 1
+
+-- functions
+
+function Thanos()
+    local args = {
+        [1] = game:GetService("ReplicatedStorage").Skins.Thanos[tostring(ThanosSkin)],
+        [2] = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.Select.SelectScript
+    }
+    
+    game:GetService("ReplicatedStorage").SelectACharacter.ChangeChar:FireServer(unpack(args))
+end 
+
+function Wanda()
+    local args = {
+        [1] = game:GetService("ReplicatedStorage").Skins.Wanda[tostring(WandaSkin)],
+        [2] = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.Select.SelectScript
+    }
+    
+    game:GetService("ReplicatedStorage").SelectACharacter.ChangeChar:FireServer(unpack(args))
+end
+
+function Speed()
+    local args = {
+        [1] = game:GetService("ReplicatedStorage").SelectACharacter.Speed,
+        [2] = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.Select.SelectScript
+    }
+    
+    game:GetService("ReplicatedStorage").SelectACharacter.ChangeChar:FireServer(unpack(args))
+end
+
+function SkinSpeed()
+    local args = {
+        [1] = game:GetService("ReplicatedStorage").Skins.Speed[tostring(SpeedSkin)],
+        [2] = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.Select.SelectScript
+    }
+    
+    game:GetService("ReplicatedStorage").SelectACharacter.ChangeChar:FireServer(unpack(args))
+end
+
+function GigaChad()
+    local args = {
+        [1] = game:GetService("ReplicatedStorage").SelectACharacter.GigaChad,
+        [2] = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.Select.SelectScript
+    }
+    
+    game:GetService("ReplicatedStorage").SelectACharacter.ChangeChar:FireServer(unpack(args))
+end
+
+function GigaSkin()
+    local args = {
+        [1] = game:GetService("ReplicatedStorage").Skins.GigaChad[tostring(ChadSkin)],
+        [2] = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.Select.SelectScript
+    }
+    
+    game:GetService("ReplicatedStorage").SelectACharacter.ChangeChar:FireServer(unpack(args))
+end
+
+function Vecna()
+    local args = {
+        [1] = game:GetService("ReplicatedStorage").SelectACharacter.Vecnae,
+        [2] = game:GetService("Players").LocalPlayer.PlayerGui.Menu.Frame.Select.SelectScript
+    }
+    
+    game:GetService("ReplicatedStorage").SelectACharacter.ChangeChar:FireServer(unpack(args))
+end
+
+function ReverseGodMode()
+
+    while _G.ReverseFlashGodMode == true do
+        if _G.ReverseFlashGodMode == true then
+            task.wait(2)
+            local A_1 = game:GetService("Players").ReyZened
+            local Event = game:GetService("Workspace").ReyZened.ReverseFlash.Phase
+            Event:FireServer(A_1)
+        end
+    end
+end
+-- Gui stuff 
+
+-- Characters
+
+chars:AddSection({
+	Name = "Thanos"
+})
+  
+chars:AddDropdown({
+	Name = "Skin",
+	Default = "Default",
+	Options = {"Default", "Comics", "Morty"},
+	Callback = function(Value)
+		
+        if Value == "Default" then
+            ThanosSkin = "Skin1"
+        elseif Value == "Comics" then
+            ThanosSkin = "Skin2"
+        elseif Value == "Morty" then
+            ThanosSkin = "Skin3"
+        end
+	end    
+})
+
+chars:AddButton({
+	Name = "Thanos",
+	Callback = function()
+      	Thanos()
+  	end    
+})
+
+chars:AddSection({
+	Name = "Wanda"
+})
+
+chars:AddDropdown({
+	Name = "Skin",
+	Default = "Default",
+	Options = {"Default", "60's", "838", "Casual", "Wendy"},
+	Callback = function(Value)
+		
+        if Value == "Default" then
+            WandaSkin = "Skin1"
+        elseif Value == "60's" then
+            WandaSkin = "Skin2"
+        elseif Value == "838" then
+            WandaSkin = "Skin3"
+        elseif Value == "Casual" then
+            WandaSkin = "Skin4"
+        elseif Value == "Wendy" then
+            WandaSkin = "Skin5"
+        end
+	end    
+})
+
+chars:AddButton({
+	Name = "Wanda",
+	Callback = function()
+      	Wanda()
+  	end    
+})
+
+chars:AddSection({
+    Name = "Speed"
+})
+
+chars:AddDropdown({
+    Name = "Skin",
+    Default = "Default",
+    Options = {"Default", "Ben", "Lowlife"},
+    Callback = function(Value)
+        
+        if Value == "Default" then
+            SpeedSkin = 1
+        elseif Value == "Ben" then
+            SpeedSkin = "Skin1"
+        elseif Value == "Lowlife" then
+            SpeedSkin = "Skin2"
+        end
+
+        print(SpeedSkin)
+    end
+})
+
+chars:AddButton({
+	Name = "Speed",
+	Callback = function()
+        if SpeedSkin == 1 then
+            print('Default')
+            Speed()
+        else
+            print'Skin'
+            SkinSpeed()
+        end
+  	end    
+})
+
+chars:AddSection({
+    Name = "GigaChad"
+})
+
+chars:AddDropdown({
+    Name = "GigaChad",
+    Default = "Default",
+    Options = {"Default", "Femchad", "Saitama", "All Might", "Terrence"},
+    Callback = function(Value)
+        
+        if Value == "Default" then
+            ChadSkin = 1
+        elseif Value == "Femchad" then
+            ChadSkin = "Skin1"
+        elseif Value == "Saitama" then
+            ChadSkin = "Skin2"
+        elseif Value == "All Might" then
+            ChadSkin = "Skin3"
+        elseif Value == "Terrence" then
+            ChadSkin = "Skin4"
+        end
+    end
+})
+
+chars:AddButton({
+	Name = "GigaChad",
+	Callback = function()
+        if ChadSkin == 1 then
+            GigaChad()
+        else
+            GigaSkin()
+        end
+  	end    
+})
+
+chars:AddSection({
+    Name = "Vecna"
+})
+
+chars:AddDropdown({
+    Name = "Skin",
+    Default = "Default",
+    Options = {"Default"},
+    Callback = function(Value)
+        
+        if Value == "Default" then
+            
+        end
+    end
+})
+
+chars:AddButton({
+	Name = "Vecna",
+	Callback = function()
+        Vecna()
+  	end    
+})
+
+Toggles:AddSection({
+	Name = "Reverse Flash"
+})
+
+Toggles:AddToggle({
+	Name = "Reverse Flash God Mode",
+	Default = false,
+	Callback = function(Value)
+		_G.ReverseFlashGodMode = Value
+        ReverseGodMode()
+	end    
+})
+
+Toggles:AddLabel("Doesn't work on some moves.")
+
+-- Visuals
+Visuals:AddSlider({
+	Name = "Time Of Day",
+	Min = 0.1,
+	Max = 24,
+	Default = game.Lighting.ClockTime,
+	Color = Color3.fromRGB(60, 234, 176),
+	Increment = 0.1,
+	ValueName = "Hours",
+	Callback = function(Value)
+		game.Lighting.ClockTime  = Value
+	end    
+})
+
+Visuals:AddToggle({
+    Name = "DOF",
+    Default = true,
+
+    Callback = function(Value)
+        game.Lighting.DepthOfField.Enabled = Value
+    end
+})
+
+Visuals:AddSlider({
+	Name = "Field Of View",
+	Min = 10,
+	Max = 120,
+	Default = game.Workspace.Camera.FieldOfView,
+	Color = Color3.fromRGB(60, 234, 176),
+	Increment = 1,
+	ValueName = "FOV",
+	Callback = function(Value)
+		game.Workspace.CurrentCamera.FieldOfView  = Value
+	end    
+})
+
+Visuals:AddSlider({
+	Name = "Brightness",
+	Min = 0.1,
+	Max = 10,
+	Default = game.Lighting.Brightness,
+	Color = Color3.fromRGB(60, 234, 176),
+	Increment = 0.1,
+	ValueName = "Brightness",
+	Callback = function(Value)
+		game.Lighting.Brightness = Value
+	end    
+})
+
+Visuals:AddSlider({
+	Name = "Saturation",
+	Min = 0.1,
+	Max = 3,
+	Default = game.Lighting.ColorCorrection.Saturation,
+	Color = Color3.fromRGB(60, 234, 176),
+	Increment = 0.1,
+	ValueName = "Saturation",
+	Callback = function(Value)
+		game.Lighting.ColorCorrection.Saturation  = Value
+	end    
+})
+
+Visuals:AddSlider({
+	Name = "Contrast",
+	Min = 0.1,
+	Max = 3,
+	Default = game.Lighting.ColorCorrection.Contrast,
+	Color = Color3.fromRGB(60, 234, 176),
+	Increment = 0.1,
+	ValueName = "Contrast",
+	Callback = function(Value)
+		game.Lighting.ColorCorrection.Contrast  = Value
+	end    
+})
+
+Visuals:AddSlider({
+	Name = "FogEnd",
+	Min = 100,
+	Max = 4500,
+	Default = game:GetService("Lighting").FogEnd,
+	Color = Color3.fromRGB(60, 234, 176),
+	Increment = 100,
+	ValueName = "FogEnd",
+	Callback = function(Value)
+		game.Lighting.FogEnd  = Value
+	end    
+})
+
+Credits:AddParagraph("Rey","Script Owner.")
+
+OrionLib:Init()
+--Welcome User
+OrionLib:MakeNotification({
+    Name = "Veracity",
+    Content = "Hello " .. game.Players.LocalPlayer.Name .. ".",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+
+OrionLib:MakeNotification({
+    Name = "Veracity",
+    Content = "Selected Game: Marvellous Playground",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
