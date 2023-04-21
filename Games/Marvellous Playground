@@ -19,6 +19,12 @@ local Toggles = Window:MakeTab({
     PremiumOnly = false
 })
 
+local Misc = Window:MakeTab({
+    Name = "Misc",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
 local Visuals = Window:MakeTab({
     Name = "Visuals",
     Icon = "rbxassetid://4483345998",
@@ -285,6 +291,17 @@ Toggles:AddToggle({
 })
 
 Toggles:AddLabel("Doesn't work on some moves!")
+
+Misc:AddButton({
+	Name = "Server Hop",
+	Callback = function()
+        
+	local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+
+	module:Teleport(game.PlaceId)
+	
+  	end    
+})
 
 -- Visuals
 Visuals:AddSlider({
