@@ -2138,5 +2138,12 @@ OrionLib:MakeNotification({
     Name = "Veracity",
     Content = "Hello " .. game.Players.LocalPlayer.Name .. ".",
     Image = "rbxassetid://4483345998",
-    Time = 10
+    Time = 5
+})
+
+OrionLib:MakeNotification({
+    Name = "Veracity",
+    Content = "Selected Game: Booga Booga",
+    Image = "rbxassetid://4483345998",
+    Time = 5
 })
