@@ -1,0 +1,7 @@
+if game.PlaceId == 11729688377 then
+    -- BOOGA
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/alt-er1/VERACITY-HUB/main/Games/Booga'))()
+elseif game.PlaceId == 8657766101 then
+    -- Marvellous
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/alt-er1/VERACITY-HUB/main/Games/Marvellous%20Playground'))()
+end
